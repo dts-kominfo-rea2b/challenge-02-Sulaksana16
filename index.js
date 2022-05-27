@@ -11,7 +11,9 @@
     ...
   ]
 */
-const arrayObjectPegawai = require("./data-customer.json");
+const arrayObjectPegawai = require("./data-customer.json")
+
+arrayObjectPegawai.forEach(x => console.log(x))
 
 function lakukanLooping(arrPegawai) {
   // ! JANGAN DIMODIFIKASI
@@ -23,20 +25,22 @@ function lakukanLooping(arrPegawai) {
 
       Contoh: ["Aisyah Nirmala", "Mansur Faisal", ...]
   */
-  let hasilLooping = null;
-
+  let hasilLooping = [];
   /*
     TODO 2: Buatlah sebuah variabel bernama "jumlahPria"
       yang berisi jumlah pria dari masing masing pegawai
   */
-  let jumlahPria = null;
-
+  let jumlahPria = 0;
   /*
     TODO 3: Buatlah sebuah variabel bernama "jumlahWanita"
       yang berisi jumlah wanita dari masing masing pegawai
   */
-  let jumlahWanita = null;
+  let jumlahWanita = 0;
 
+  dataYangAkanDilooping.forEach( dataPegawai => {
+    hasilLooping.push(`${dataPegawai.namaDepan} ${dataPegawai.namaBelakang}`)
+    dataPegawai.jenisKelamin === "M" ? jumlahPria++ : jumlahWanita++ 
+  });
   /*
     TODO 4: Buatlah sebuah variabel bernama "komentar"
       yang akan mengomentari apakah lebih banyak Pria atau Wanita
@@ -48,7 +52,8 @@ function lakukanLooping(arrPegawai) {
       Apabila imbang, maka komentar akan berisi:
         "Jumlah Pria dan Wanita berimbang"
   */
-  let komentar = null;
+  let komentar = '';
+  jumlahPria > jumlahWanita ? komentar = "Jumlah Pria lebih banyak dari Wanita" : jumlahPria < jumlahWanita ? komentar = "Jumlah Wanita lebih banyak dari Pria" : "Jumlah Pria dan Wanita berimbang"
 
   // ! JANGAN DIMODIFIKASI
   return {
